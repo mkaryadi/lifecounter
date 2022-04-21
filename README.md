@@ -1,6 +1,6 @@
 # lifecounter
 
-## Some quick design decision explinations
+## Some quick design decision explanations
 
 I also play magic, and I'm aware that blue and red are game colors, but I couldn't think of any better background colors for players one and two.
 
