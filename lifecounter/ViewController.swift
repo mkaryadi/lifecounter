@@ -12,14 +12,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerTwoLife: UILabel!
     @IBOutlet weak var losingLabel: UILabel!
     
+    @IBOutlet weak var playerOneMinusFiveButton: UIButton!
+    @IBOutlet weak var playerOneMinusOneButton: UIButton!
+    @IBOutlet weak var playerOnePlusOneButton: UIButton!
+    @IBOutlet weak var playerOnePlusFiveButton: UIButton!
+    
     var playerOneLifeTotal = 20
     var playerTwoLifeTotal = 20
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         playerOneLife.text = String(playerOneLifeTotal)
         playerTwoLife.text = String(playerTwoLifeTotal)
+        playerOneMinusFiveButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        playerOneMinusOneButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        playerOnePlusOneButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        playerOnePlusFiveButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        playerOneLife.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
     func updateLifeTotal (_ toUpdate: Int) -> Void {
         if toUpdate == 1 {
