@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     var playerOneLifeTotal = 20
     var playerTwoLifeTotal = 20
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -91,10 +91,14 @@ class ViewController: UIViewController {
     
     @IBAction func playerTwoPlusCustom(_ sender: Any) {
         let alert = UIAlertController(title: "Add Life To Player 2", message: "Add how much life?", preferredStyle: .alert)
+        var toAdd = 0
         alert.addAction(UIAlertAction(title: "OK",
                                       style: .default,
                                       handler: {_ in
-            NSLog("\"OK\" pressed.")
+            toAdd = Int(alert.textFields![0].text!) ?? 0
+            NSLog("\"OK\" pressed. Adding \(toAdd) life...")
+            self.playerTwoLifeTotal += toAdd
+            self.updateLifeTotal(2)
         }))
         alert.addAction(UIAlertAction(title: "Cancel",
                                       style: .default,
@@ -108,8 +112,6 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: {
             NSLog("The completion handler fired")
         })
-        playerTwoLifeTotal += 5
-        updateLifeTotal(2)
     }
 
     
