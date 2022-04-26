@@ -12,10 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerTwoLife: UILabel!
     @IBOutlet weak var losingLabel: UILabel!
     
-    @IBOutlet weak var playerOneMinusFiveButton: UIButton!
+    @IBOutlet weak var playerOneMinusCustomButton: UIButton!
     @IBOutlet weak var playerOneMinusOneButton: UIButton!
     @IBOutlet weak var playerOnePlusOneButton: UIButton!
-    @IBOutlet weak var playerOnePlusFiveButton: UIButton!
+    @IBOutlet weak var playerOnePlusCustomButton: UIButton!
+    @IBOutlet weak var playerTwoMinusCustomButton: UIButton!
+    @IBOutlet weak var playerTwoMinusOneButton: UIButton!
+    @IBOutlet weak var playerTwoPlusOneButton: UIButton!
+    @IBOutlet weak var playerTwoPlusCustomButton: UIButton!
     
     var playerOneLifeTotal = 20
     var playerTwoLifeTotal = 20
@@ -25,10 +29,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         playerOneLife.text = String(playerOneLifeTotal)
         playerTwoLife.text = String(playerTwoLifeTotal)
-        playerOneMinusFiveButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        
+        // Flip the UI for Player One
+        playerOneMinusCustomButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         playerOneMinusOneButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         playerOnePlusOneButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-        playerOnePlusFiveButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        playerOnePlusCustomButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         playerOneLife.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
     func updateLifeTotal (_ toUpdate: Int) -> Void {
@@ -47,7 +53,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func playerOneMinusFive(_ sender: Any) {
+    @IBAction func playerOneMinusCustom(_ sender: Any) {
         playerOneLifeTotal -= 5
         updateLifeTotal(1)
     }
@@ -62,13 +68,13 @@ class ViewController: UIViewController {
         updateLifeTotal(1)
     }
     
-    @IBAction func playerOnePlusFive(_ sender: Any) {
+    @IBAction func playerOnePlusCustom(_ sender: Any) {
         playerOneLifeTotal += 5
         updateLifeTotal(1)
     }
     
     
-    @IBAction func playerTwoMinusFive(_ sender: Any) {
+    @IBAction func playerTwoMinusCustom(_ sender: Any) {
         playerTwoLifeTotal -= 5
         updateLifeTotal(2)
     }
@@ -83,7 +89,25 @@ class ViewController: UIViewController {
         updateLifeTotal(2)
     }
     
-    @IBAction func playerTwoPlusFive(_ sender: Any) {
+    @IBAction func playerTwoPlusCustom(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Life To Player 2", message: "Add how much life?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: .default,
+                                      handler: {_ in
+            NSLog("\"OK\" pressed.")
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel",
+                                      style: .default,
+                                      handler: {_ in
+            NSLog("\"Cancel\" pressed.")
+        }))
+
+        alert.addTextField { textField in
+            textField.keyboardType = UIKeyboardType.numberPad
+        }
+        self.present(alert, animated: true, completion: {
+            NSLog("The completion handler fired")
+        })
         playerTwoLifeTotal += 5
         updateLifeTotal(2)
     }

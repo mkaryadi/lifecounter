@@ -38,12 +38,12 @@
                                             <constraint firstAttribute="height" constant="50" id="Yzl-6J-5Kj"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="+5">
+                                        <buttonConfiguration key="configuration" style="filled" title="+">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="playerOnePlusFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCt-jZ-k5K"/>
+                                            <action selector="playerOnePlusCustom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYO-yJ-XSr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rim-SU-Fe9">
@@ -52,7 +52,7 @@
                                             <constraint firstAttribute="height" constant="50" id="aF6-ic-LGe"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="+">
+                                        <buttonConfiguration key="configuration" style="filled" title="+1">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
@@ -66,7 +66,7 @@
                                             <constraint firstAttribute="height" constant="50" id="WqA-g1-G0T"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="-">
+                                        <buttonConfiguration key="configuration" style="filled" title="-1">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
@@ -80,12 +80,12 @@
                                             <constraint firstAttribute="height" constant="50" id="zXE-P7-qIe"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="-5">
+                                        <buttonConfiguration key="configuration" style="filled" title="-">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="playerOneMinusFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d1d-Eb-ZJr"/>
+                                            <action selector="playerOneMinusCustom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zu8-AY-Qu0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,12 +121,12 @@
                                             <constraint firstAttribute="height" constant="50" id="iR0-ao-2Sr"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="-5">
+                                        <buttonConfiguration key="configuration" style="filled" title="-">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="playerTwoMinusFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Jy-7m-NOA"/>
+                                            <action selector="playerTwoMinusCustom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Huj-yh-wzG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9S-ln-1R5">
@@ -135,7 +135,7 @@
                                             <constraint firstAttribute="height" constant="50" id="4J3-TR-dHP"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="-">
+                                        <buttonConfiguration key="configuration" style="filled" title="-1">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
@@ -149,7 +149,7 @@
                                             <constraint firstAttribute="height" constant="50" id="ibQ-cr-1f4"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="+">
+                                        <buttonConfiguration key="configuration" style="filled" title="+1">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
@@ -163,12 +163,12 @@
                                             <constraint firstAttribute="height" constant="50" id="FXr-3m-G5u"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="+5">
+                                        <buttonConfiguration key="configuration" style="filled" title="+">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="playerTwoPlusFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vwm-Jg-NHz"/>
+                                            <action selector="playerTwoPlusCustom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MZL-o1-832"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -210,11 +210,15 @@
                     <connections>
                         <outlet property="losingLabel" destination="AH1-gD-ERs" id="QI6-7k-zlP"/>
                         <outlet property="playerOneLife" destination="GNV-Uz-eGs" id="WO1-JS-Zdl"/>
-                        <outlet property="playerOneMinusFiveButton" destination="9Ed-6L-8e9" id="wTb-t3-KBk"/>
+                        <outlet property="playerOneMinusCustomButton" destination="9Ed-6L-8e9" id="3cE-wA-rCp"/>
                         <outlet property="playerOneMinusOneButton" destination="alO-ZJ-58I" id="QeZ-gW-leb"/>
-                        <outlet property="playerOnePlusFiveButton" destination="jh9-QG-hjf" id="eSa-dr-voq"/>
+                        <outlet property="playerOnePlusCustomButton" destination="jh9-QG-hjf" id="j4a-tH-ZOr"/>
                         <outlet property="playerOnePlusOneButton" destination="Rim-SU-Fe9" id="V6D-Bq-uV4"/>
                         <outlet property="playerTwoLife" destination="AxO-oe-EOt" id="YPc-9b-53U"/>
+                        <outlet property="playerTwoMinusCustomButton" destination="KD1-cG-G5N" id="Bkm-ej-L4y"/>
+                        <outlet property="playerTwoMinusOneButton" destination="M9S-ln-1R5" id="kSO-If-BGl"/>
+                        <outlet property="playerTwoPlusCustomButton" destination="Sde-ph-Y7T" id="eM4-Tj-SRS"/>
+                        <outlet property="playerTwoPlusOneButton" destination="2o7-9R-JLi" id="LoB-hd-1h5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
