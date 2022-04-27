@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="lifecounter" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sN3-Od-NOx">
+                    <rect key="frame" x="10" y="504" width="394" height="308"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGs-36-orI">
+                            <rect key="frame" x="0.0" y="258" width="91" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="QGh-hb-oHA"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="-">
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="playerMinusCustom:" destination="-2" eventType="touchUpInside" id="t9u-yp-XWH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icj-Un-POE">
+                            <rect key="frame" x="101" y="258" width="91" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="IWI-4T-BXm"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="-1">
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="playerMinusOne:" destination="-2" eventType="touchUpInside" id="829-3v-KmF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-nb-GUM">
+                            <rect key="frame" x="202" y="258" width="91" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Nnn-Eq-9yU"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="+1">
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="playerPlusOne:" destination="-2" eventType="touchUpInside" id="fzr-Xh-Bud"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-D2-dwi">
+                            <rect key="frame" x="303" y="258" width="91" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Uqj-4j-FNn"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="+">
+                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="playerPlusCustom:" destination="-2" eventType="touchUpInside" id="35v-ZE-Nxz"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Icj-Un-POE" firstAttribute="width" secondItem="DGs-36-orI" secondAttribute="width" id="5KH-XO-8AW"/>
+                        <constraint firstItem="SaX-D2-dwi" firstAttribute="width" secondItem="DGs-36-orI" secondAttribute="width" id="EOj-Ws-tyl"/>
+                        <constraint firstItem="Dmy-nb-GUM" firstAttribute="width" secondItem="DGs-36-orI" secondAttribute="width" id="R5m-IT-22B"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KT-d4-bR9">
+                    <rect key="frame" x="171.5" y="412" width="71" height="72"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemRedColor"/>
+            <constraints>
+                <constraint firstItem="4KT-d4-bR9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8JF-pX-L0y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sN3-Od-NOx" secondAttribute="bottom" constant="50" id="DB1-q4-kVV"/>
+                <constraint firstItem="sN3-Od-NOx" firstAttribute="top" secondItem="4KT-d4-bR9" secondAttribute="bottom" constant="20" id="TD5-1K-l9P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sN3-Od-NOx" secondAttribute="trailing" constant="10" id="h6q-Yi-twU"/>
+                <constraint firstItem="sN3-Od-NOx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="iMg-qg-Oxx"/>
+                <constraint firstItem="4KT-d4-bR9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yAH-li-GCW"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

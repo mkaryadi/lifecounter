@@ -16,6 +16,7 @@
 		C42F97C6281100DE00DEFBF8 /* lifecounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F97C5281100DE00DEFBF8 /* lifecounterTests.swift */; };
 		C42F97D0281100DF00DEFBF8 /* lifecounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F97CF281100DF00DEFBF8 /* lifecounterUITests.swift */; };
 		C42F97D2281100DF00DEFBF8 /* lifecounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F97D1281100DF00DEFBF8 /* lifecounterUITestsLaunchTests.swift */; };
+		C46E6EE32818C43600C5FA59 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E6EE12818C43600C5FA59 /* PlayerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C42F97CB281100DF00DEFBF8 /* lifecounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lifecounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42F97CF281100DF00DEFBF8 /* lifecounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lifecounterUITests.swift; sourceTree = "<group>"; };
 		C42F97D1281100DF00DEFBF8 /* lifecounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lifecounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C46E6EE12818C43600C5FA59 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,9 @@
 				C42F97B0281100DD00DEFBF8 /* SceneDelegate.swift */,
 				C42F97B2281100DD00DEFBF8 /* ViewController.swift */,
 				C42F97B4281100DD00DEFBF8 /* Main.storyboard */,
-				C42F97B7281100DE00DEFBF8 /* Assets.xcassets */,
+				C46E6EE12818C43600C5FA59 /* PlayerView.xib */,
 				C42F97B9281100DE00DEFBF8 /* LaunchScreen.storyboard */,
+				C42F97B7281100DE00DEFBF8 /* Assets.xcassets */,
 				C42F97BC281100DE00DEFBF8 /* Info.plist */,
 			);
 			path = lifecounter;
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C42F97BB281100DE00DEFBF8 /* LaunchScreen.storyboard in Resources */,
+				C46E6EE32818C43600C5FA59 /* PlayerView.xib in Resources */,
 				C42F97B8281100DE00DEFBF8 /* Assets.xcassets in Resources */,
 				C42F97B6281100DD00DEFBF8 /* Main.storyboard in Resources */,
 			);
