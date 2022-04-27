@@ -21,8 +21,15 @@ class PlayerView: UIView {
     
     var playerLifeTotal = 20
     
-    func update() {
+    func update(_ amount: Int, _ direction: Bool) {
+        vc?.addButton.isEnabled = false
+        vc?.removeButton.isEnabled = false
         playerLife.text = String(playerLifeTotal)
+        if direction {
+            vc?.history.append("Player \(playerNumber) gained \(amount) life.")
+        } else {
+            vc?.history.append("Player \(playerNumber) lost \(amount) life.")
+        }
         if playerLifeTotal <= 0 {
             let alert = UIAlertController(title: "Game Over!", message: "Player \(playerNumber) loses!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
@@ -35,13 +42,13 @@ class PlayerView: UIView {
     
     @IBAction func playerPlusOne(_ sender: Any) {
         playerLifeTotal += 1
-        update()
+        update(1, true)
     }
 
     
     @IBAction func playerMinusOne(_ sender: Any) {
         playerLifeTotal -= 1
-        update()
+        update(1, false)
     }
     
     
@@ -55,7 +62,9 @@ class PlayerView: UIView {
             toAdd = Int(alert.textFields![0].text!) ?? 0
             NSLog("\"OK\" pressed. Adding \(toAdd) life...")
             self.playerLifeTotal += toAdd
-            self.update()
+            if toAdd != 0 {
+                self.update(toAdd, true)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel",
@@ -83,7 +92,9 @@ class PlayerView: UIView {
             toSub = Int(alert.textFields![0].text!) ?? 0
             NSLog("\"OK\" pressed. Subtracting \(toSub) life...")
             self.playerLifeTotal -= toSub
-            self.update()
+            if toSub != 0 {
+                self.update(toSub, false)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel",

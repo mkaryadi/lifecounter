@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerView: UIStackView!
     
     func reset() {
+        addButton.isEnabled = true
+        removeButton.isEnabled = true
         for view in playerViews {
             view.playerLifeTotal = 20
             view.playerLife.text = String(20)
@@ -19,6 +21,9 @@ class ViewController: UIViewController {
     }
     
     var playerViews : [PlayerView] = []
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var removeButton: UIButton!
+    var history : [String] = []
     
     @IBAction func addPlayerPressed(_ sender: Any) {
         if playerViews.count < 4 {
@@ -86,5 +91,11 @@ class ViewController: UIViewController {
             playerViews.append(playerFourView)
             containerView.addArrangedSubview(playerFourView)
         }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! HistoryViewController
+        destination.history = history
     }
 }
