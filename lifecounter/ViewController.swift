@@ -10,89 +10,59 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var playerLife: UILabel!
+    
+    func reset() {
+        for view in playerViews {
+            view.playerLifeTotal = 20
+            view.playerLife.text = String(20)
+        }
+    }
+    
+    var playerViews : [PlayerView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if let playerView =
-            Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? UIView {
-            playerView.frame = containerView.frame.offsetBy(dx: 0.0, dy: 0.0)
-            view.addSubview(playerView)
+        if let playerOneView =
+            Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
+            playerOneView.vc = self
+            playerOneView.playerNumber = 1
+            playerOneView.frame = containerView.frame.offsetBy(dx: 0.0, dy: 0.0)
+            playerOneView.frame.size.width = containerView.frame.size.width
+            playerOneView.frame.size.height = containerView.frame.size.height / 4
+            playerViews.append(playerOneView)
+            view.addSubview(playerOneView)
         }
-    }
-    
-    
-    var playerLifeTotal = 20
-    
-    func update() {
-        playerLife.text = String(playerLifeTotal)
-    }
-    
-    
-    @IBAction func playerPlusOne(_ sender: Any) {
-        playerLifeTotal += 1
-        update()
-    }
 
-    
-    @IBAction func playerMinusOne(_ sender: Any) {
-        playerLifeTotal -= 1
-        update()
-    }
-    
-    
-    @IBAction func playerPlusCustom(_ sender: Any) {
-        let alert = UIAlertController(title: "Add Life to This Player", message: "Add how much life?", preferredStyle: .alert)
-        var toAdd = 0
-        
-        alert.addAction(UIAlertAction(title: "OK",
-                                      style: .default,
-                                      handler: {_ in
-            toAdd = Int(alert.textFields![0].text!) ?? 0
-            NSLog("\"OK\" pressed. Adding \(toAdd) life...")
-            self.playerLifeTotal += toAdd
-            self.update()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel",
-                                      style: .default,
-                                      handler: {_ in
-            NSLog("\"Cancel\" pressed.")
-        }))
-        
-        alert.addTextField { textField in
-            textField.keyboardType = UIKeyboardType.numberPad
+
+        if let playerTwoView =
+            Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
+            playerTwoView.vc = self
+            playerTwoView.playerNumber = 2
+            playerTwoView.frame = containerView.frame.offsetBy(dx: 0.0, dy: containerView.frame.size.height / 4)
+            playerTwoView.frame.size.height = containerView.frame.size.height / 4
+            playerViews.append(playerTwoView)
+            view.addSubview(playerTwoView)
+        }
+
+        if let playerThreeView =
+            Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
+            playerThreeView.vc = self
+            playerThreeView.playerNumber = 3
+            playerThreeView.frame = containerView.frame.offsetBy(dx: 0.0, dy: containerView.frame.size.height / 2)
+            playerThreeView.frame.size.height = containerView.frame.size.height / 4
+            playerViews.append(playerThreeView)
+            view.addSubview(playerThreeView)
         }
         
-        self.present(alert, animated: true)
-    }
-    
-    
-    
-    @IBAction func playerMinusCustom(_ sender: Any) {
-        let alert = UIAlertController(title: "Subtract Life From This Player", message: "Subtract how much life?", preferredStyle: .alert)
-        var toSub = 0
-        
-        alert.addAction(UIAlertAction(title: "OK",
-                                      style: .default,
-                                      handler: {_ in
-            toSub = Int(alert.textFields![0].text!) ?? 0
-            NSLog("\"OK\" pressed. Subtracting \(toSub) life...")
-            self.playerLifeTotal -= toSub
-            self.update()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel",
-                                      style: .default,
-                                      handler: {_ in
-            NSLog("\"Cancel\" pressed.")
-        }))
-        
-        alert.addTextField { textField in
-            textField.keyboardType = UIKeyboardType.numberPad
+        if let playerFourView =
+            Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
+            playerFourView.vc = self
+            playerFourView.playerNumber = 4
+            playerFourView.frame = containerView.frame.offsetBy(dx: 0.0, dy: containerView.frame.height - (containerView.frame.size.height / 4))
+            playerFourView.frame.size.height = containerView.frame.size.height / 4
+            playerViews.append(playerFourView)
+            view.addSubview(playerFourView)
         }
-        
-        self.present(alert, animated: true)
     }
 }
