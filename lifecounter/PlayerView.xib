@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="lifecounter" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="PlayerView" customModule="lifecounter" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sN3-Od-NOx">
-                    <rect key="frame" x="10" y="792" width="394" height="50"/>
+                    <rect key="frame" x="10" y="822" width="408" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGs-36-orI">
-                            <rect key="frame" x="0.0" y="0.0" width="91" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="94.666666666666671" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="QGh-hb-oHA"/>
                             </constraints>
@@ -32,7 +32,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icj-Un-POE">
-                            <rect key="frame" x="101" y="0.0" width="91" height="50"/>
+                            <rect key="frame" x="104.66666666666669" y="0.0" width="94.333333333333314" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="IWI-4T-BXm"/>
                             </constraints>
@@ -46,7 +46,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-nb-GUM">
-                            <rect key="frame" x="202" y="0.0" width="91" height="50"/>
+                            <rect key="frame" x="208.99999999999997" y="0.0" width="94.666666666666657" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Nnn-Eq-9yU"/>
                             </constraints>
@@ -60,7 +60,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-D2-dwi">
-                            <rect key="frame" x="303" y="0.0" width="91" height="50"/>
+                            <rect key="frame" x="313.66666666666669" y="0.0" width="94.333333333333314" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Uqj-4j-FNn"/>
                             </constraints>
@@ -81,7 +81,7 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KT-d4-bR9">
-                    <rect key="frame" x="171.5" y="700" width="71" height="72"/>
+                    <rect key="frame" x="178.66666666666666" y="730.33333333333337" width="71" height="71.666666666666629"/>
                     <fontDescription key="fontDescription" type="system" pointSize="60"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -95,7 +95,6 @@
                 <constraint firstItem="sN3-Od-NOx" firstAttribute="top" secondItem="4KT-d4-bR9" secondAttribute="bottom" constant="20" id="TD5-1K-l9P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sN3-Od-NOx" secondAttribute="trailing" constant="10" id="h6q-Yi-twU"/>
                 <constraint firstItem="sN3-Od-NOx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="iMg-qg-Oxx"/>
-                <constraint firstItem="4KT-d4-bR9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yAH-li-GCW"/>
             </constraints>
             <connections>
                 <outlet property="playerLife" destination="4KT-d4-bR9" id="TQt-q0-zf4"/>

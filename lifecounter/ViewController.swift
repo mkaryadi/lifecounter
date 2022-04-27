@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: UIStackView!
     
     func reset() {
         for view in playerViews {
@@ -21,7 +21,34 @@ class ViewController: UIViewController {
     var playerViews : [PlayerView] = []
     
     @IBAction func addPlayerPressed(_ sender: Any) {
+        if playerViews.count < 4 {
+            if let newPlayerView =
+                Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
+                newPlayerView.vc = self
+                newPlayerView.playerNumber = playerViews.count + 1
+                playerViews.append(newPlayerView)
+                containerView.addArrangedSubview(newPlayerView)
+            }
+        } else {
+            let alert = UIAlertController(title: "Whoops!", message: "Can't add another player!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
     }
+    
+    
+    @IBAction func removePlayerPressed(_ sender: Any) {
+        NSLog("Remove Pressed!")
+        if playerViews.count > 2 {
+            playerViews.last!.removeFromSuperview()
+            playerViews.removeLast()
+        } else {
+            let alert = UIAlertController(title: "Whoops!", message: "Can't remove any more players!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,11 +56,8 @@ class ViewController: UIViewController {
             Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
             playerOneView.vc = self
             playerOneView.playerNumber = 1
-            playerOneView.frame = containerView.frame.offsetBy(dx: 0.0, dy: 0.0)
-            playerOneView.frame.size.width = containerView.frame.size.width
-            playerOneView.frame.size.height = containerView.frame.size.height / 4
             playerViews.append(playerOneView)
-            view.addSubview(playerOneView)
+            containerView.addArrangedSubview(playerOneView)
         }
 
 
@@ -41,30 +65,26 @@ class ViewController: UIViewController {
             Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
             playerTwoView.vc = self
             playerTwoView.playerNumber = 2
-            playerTwoView.frame = containerView.frame.offsetBy(dx: 0.0, dy: containerView.frame.size.height / 4)
-            playerTwoView.frame.size.height = containerView.frame.size.height / 4
             playerViews.append(playerTwoView)
-            view.addSubview(playerTwoView)
+            containerView.addArrangedSubview(playerTwoView)
         }
-
+        
+        
         if let playerThreeView =
             Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
             playerThreeView.vc = self
             playerThreeView.playerNumber = 3
-            playerThreeView.frame = containerView.frame.offsetBy(dx: 0.0, dy: containerView.frame.size.height / 2)
-            playerThreeView.frame.size.height = containerView.frame.size.height / 4
             playerViews.append(playerThreeView)
-            view.addSubview(playerThreeView)
+            containerView.addArrangedSubview(playerThreeView)
         }
         
+
         if let playerFourView =
             Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first! as? PlayerView {
             playerFourView.vc = self
             playerFourView.playerNumber = 4
-            playerFourView.frame = containerView.frame.offsetBy(dx: 0.0, dy: containerView.frame.height - (containerView.frame.size.height / 4))
-            playerFourView.frame.size.height = containerView.frame.size.height / 4
             playerViews.append(playerFourView)
-            view.addSubview(playerFourView)
+            containerView.addArrangedSubview(playerFourView)
         }
     }
 }
