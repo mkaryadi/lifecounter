@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     var playerViews : [PlayerView] = []
     
+    @IBAction func addPlayerPressed(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
